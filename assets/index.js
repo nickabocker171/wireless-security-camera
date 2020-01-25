@@ -100,8 +100,8 @@ webpackJsonp([0], {
                 cameras: C,
                 updateToken: function(e) {
                     var n = this;
-                  //The line "/userauthenticate" should be updated to "/userauthenticator" to match Twilio BluePrint
-                    return p.get("/userauthenticate?username=twilio&pincode=928462", function(t) {
+                  //The line "/userauthenticate" was updated to "/userauthenticator" to match Twilio BluePrint
+                    return p.get("/userauthenticator?username=twilio&pincode=928462", function(t) {
                         t.success ? (console.log("token updated:", t), b = t.token, v ? v.updateToken(b) : v = new g(b), e && e(b), setTimeout(n.updateToken.bind(n), 1e3 * t.ttl * .96)) : console.error("failed to authenticate the user: ", t.error)
                     }).fail(function(e, t, a) {
                         console.error("failed to send authentication request:", t, a), setTimeout(n.updateToken.bind(n), 1e4)
